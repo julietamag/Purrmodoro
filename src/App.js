@@ -10,6 +10,7 @@ function App() {
   const [sessionTime, setSessionTime] = useState(5);
   const [timerOn, setTimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [audioBreak, setAudioBreak] = useState(new Audio(sound))
   const [imageCat, setImageCat] = useState('');
   const [bgColor, setBgColor] = useState(false)
