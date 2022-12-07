@@ -1,38 +1,197 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  padding-top: 2rem;
+}
+
+
+.session{
+  background-color: #788bff;
+}
+
+.break{
+  background-color: #f94144;
+}
+
+#title{
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  border-bottom: 2px solid white;
+}
+
+/* BREAK && SESSION LENGTH  */
+
+#length-container {
+  width: 30rem;
+}
+
+.Length{
+  background-color: rgba(0,0,0, .3);
+  color: white;
+  border-radius: 3rem;
+  width: 13rem;
+  height: 7rem;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  line-height: 0;
 }
 
-.App-link {
-  color: #61dafb;
+#break-time,
+#length-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.length-title {
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* BREAK  */
+#break-time {
+  width: 9rem;
+}
+
+#break-time button {
+  border-radius: 50%;
+  background-color: #ffffff;
+  width: 2.3rem;
+  height: 2.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+#break-time button:hover{
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+#break-time button:active{
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+  opacity: 80%;
+}
+
+#break-length {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* SESSION  */
+#timer-container {
+  background-color: white;
+  border-radius: 50%;
+  width: 12rem;
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 2rem;
+	border-radius: 50%;
+	position: relative;
+	float: left;
+}
+
+#timer-container:before{
+	position: absolute;
+	display: block;
+	content: "";
+	width: 0;
+	height: 0;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-bottom: 40px solid white;
+	border-radius: 5px;
+	left: -15px;
+	top: -5px;
+	transform: rotate(-45deg);
+}
+
+#timer-container:after{
+	position: absolute;
+	display: block;
+	content: "";
+	width: 0;
+	height: 0;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-bottom: 40px solid white;
+	border-radius: 5px;
+	right: -15px;
+	top: -5px;
+	transform: rotate(45deg);
+}
+
+#timer-label h2 {
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+/* PLAY-STOP && RESET BUTTONS  */
+
+#start_stop {
+  border: 2px solid white;
+  border-top-left-radius: 45%;
+  border-bottom-left-radius: 45%;
+}
+
+#reset {
+  border: 2px solid white;
+  border-top-right-radius: 45%;
+  border-bottom-right-radius: 45%;
+}
+
+#start_stop:hover{
+  border: 2px solid black;
+  background-color: rgba(0,0,0, .6)
+}
+
+#reset:hover{
+  border: 2px solid black;
+  background-color: rgba(0,0,0, .6)
+}
+
+#controllers-container button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .8rem;
+  width: 4rem;
+  margin-top: 2rem;
+  background-color: rgba(0,0,0, .3)
+}
+
+/* DISPLAY TIME */
+#time-left {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+#image-container img{
+  max-width: 12rem;
+  max-height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
 }
