@@ -76,7 +76,7 @@ function App() {
         setDisplayTime(breakTime);
       } else if (onBreak) {
         setOnBreak(false);
-        playSound();
+        audioBreak.play();
         setImageCat(cat_working);
         setBgColor(false);
         setDisplayTime(sessionTime);
