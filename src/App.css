@@ -3,11 +3,11 @@
 }
 
 .App {
-  height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding-top: 2rem;
+  height: 100vh;
 }
 
 
@@ -89,6 +89,18 @@
 #break-length {
   font-size: 1.2rem;
   font-weight: 400;
+}
+
+@media screen and (max-width: 600px){
+  #title{
+    text-align: center
+  }
+
+  #length-container {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 15rem;
+  }
 }
 
 /* SESSION  */
