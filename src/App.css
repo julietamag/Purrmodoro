@@ -98,8 +98,12 @@
 
   #length-container {
     flex-direction: column;
+    min-height: 15rem;
     justify-content: space-between;
-    height: 15rem;
+  }
+
+  .App{
+    padding-top: 0;
   }
 }
 
@@ -108,14 +112,13 @@
   background-color: white;
   border-radius: 50%;
   width: 12rem;
-  height: 12rem;
+  min-height: 12rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
   margin-top: 2rem;
-	border-radius: 50%;
 	position: relative;
 	float: left;
 }
