@@ -73,7 +73,6 @@ function App() {
       playSound();
       if (!onBreak) {
         setOnBreak(true);
-        // playSound();
         setImageCat(cat_sleepy);
         setBgColor(true);
         setDisplayTime(breakTime);
@@ -115,6 +114,12 @@ function App() {
     // SET THE TIMER STATE TO BE ON IF ITS OFF AND VICEVERSA
     setTimerOn(!timerOn)
   }
+
+  useEffect(() =>{
+    if (displayTime <= 0) {
+      playSound();
+    }
+  },[displayTime, playSound])
 
 
   return (
