@@ -41,6 +41,7 @@ function App() {
         } else if (breakTime >= 60 * 60 && amount > 0) {
           return;
         } else {
+          playSound() 
           setBreakTime((prev) => prev + amount)
         }
       }
@@ -63,6 +64,8 @@ function App() {
     setBreakTime(5 * 60);
     setDisplayTime(25 * 60);
     setSessionTime(25 * 60);
+    setBgColor(false)
+    setImageCat('');
   }
 
   // HANDLE THE STATE OF ON BREAK; INSIDE THE INTERVAL DOESNT WORK
