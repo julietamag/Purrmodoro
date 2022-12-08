@@ -41,7 +41,6 @@ function App() {
         } else if (breakTime >= 60 * 60 && amount > 0) {
           return;
         } else {
-          playSound() 
           setBreakTime((prev) => prev + amount)
         }
       }
@@ -92,6 +91,7 @@ function App() {
   // DIMINISH DIPLAY TIMER BY ONE SEC UNTIL THE CONDITION REACHES 0
   function handlePlayPause() {
     if (!timerOn) {
+      playSound() 
       setImageCat(cat_working);
       let interval = setInterval(() => {
         setDisplayTime((prev) => {
