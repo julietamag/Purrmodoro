@@ -119,7 +119,8 @@ function App() {
     if (displayTime <= 0) {
       playSound();
     }
-  },[displayTime, playSound])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[displayTime])
 
 
   return (
