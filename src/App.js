@@ -120,7 +120,7 @@ function App() {
     <div 
     className = {!bgColor ? 'App session' : 'App break'}
     >
-      <h1 id='title'>The Faboulous Purrmodoro Timer</h1>
+      <h1 id='titleMain'>The Faboulous Purrmodoro Timer</h1>
       <div id='length-container'>
         <Length
           title={'break length'}

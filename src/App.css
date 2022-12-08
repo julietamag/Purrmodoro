@@ -19,9 +19,11 @@
   background-color: #f94144;
 }
 
-#title{
+#titleMain{
   font-family: 'Raleway', sans-serif;
   color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 1rem;
   border-bottom: 2px solid white;
 }
 
@@ -97,9 +99,19 @@
   }
 
   #length-container {
-    flex-direction: column;
-    min-height: 15rem;
-    justify-content: space-between;
+    min-height: 7rem;
+    justify-content: space-evenly;
+  }
+
+  .length-title{
+    font-size: 1rem;
+    margin: .5rem;
+  }
+
+  .Length{
+    padding: 1rem;
+    width: 13rem;
+    height: 7rem;
   }
 
   .App{
