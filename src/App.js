@@ -115,13 +115,6 @@ function App() {
     setTimerOn(!timerOn)
   }
 
-  useEffect(() =>{
-    if (displayTime <= 0) {
-      playSound();
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[displayTime])
-
 
   return (
     <div 
