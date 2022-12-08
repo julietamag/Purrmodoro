@@ -70,15 +70,15 @@ function App() {
   // HANDLE THE STATE OF ON BREAK; INSIDE THE INTERVAL DOESNT WORK
   useEffect(() => {
     if (displayTime <= 0) {
+      playSound();
       if (!onBreak) {
         setOnBreak(true);
-        playSound();
+        // playSound();
         setImageCat(cat_sleepy);
         setBgColor(true);
         setDisplayTime(breakTime);
       } else if (onBreak) {
         setOnBreak(false);
-        audioBreak.play();
         setImageCat(cat_working);
         setBgColor(false);
         setDisplayTime(sessionTime);
@@ -91,8 +91,8 @@ function App() {
   // DIMINISH DIPLAY TIMER BY ONE SEC UNTIL THE CONDITION REACHES 0
   function handlePlayPause() {
     if (!timerOn) {
-      playSound() 
       setImageCat(cat_working);
+      playSound();
       let interval = setInterval(() => {
         setDisplayTime((prev) => {
           const newTimeLeft = prev - 1;
