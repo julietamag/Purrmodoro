@@ -6,8 +6,8 @@ import cat_working from './work_cat.jpeg';
 
 function App() {
   const [displayTime, setDisplayTime] = useState(25 * 60);
-  const [breakTime, setBreakTime] = useState(3);
-  const [sessionTime, setSessionTime] = useState(5);
+  const [breakTime, setBreakTime] = useState(5 * 60);
+  const [sessionTime, setSessionTime] = useState(25 * 60);
   const [timerOn, setTimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
   // eslint-disable-next-line no-unused-vars
