@@ -105,7 +105,7 @@
   .App{
     padding-top: 0;
     height: 115vh;
-    width: fit-content;
+    max-width: fit-content;
   }
 }
 
