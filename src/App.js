@@ -1,8 +1,10 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import sound from './cat_sound.mp3';
+import deafault_sound from './cat_angry.mp3';
 import cat_sleepy from './sleepy_cat.jpeg';
 import cat_working from './work_cat.jpeg';
+import NavBar from './NavBar';
+// import soundArray from './soundArray';
 
 function App() {
   const [displayTime, setDisplayTime] = useState(25 * 60);
@@ -10,10 +12,21 @@ function App() {
   const [sessionTime, setSessionTime] = useState(25 * 60);
   const [timerOn, setTimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
-  // eslint-disable-next-line no-unused-vars
-  const [audioBreak, setAudioBreak] = useState(new Audio(sound))
+  const [audioSrc, setAudioSrc] = useState(deafault_sound)
+  const [audioBreak, setAudioBreak] = useState(new Audio(audioSrc));
   const [imageCat, setImageCat] = useState('');
-  const [bgColor, setBgColor] = useState(false)
+  const [bgColor, setBgColor] = useState(false);
+
+function changeSound(e){
+  const audio = new Audio(e)
+  setAudioSrc(audio)
+  setAudioBreak(new Audio(e))
+}
+
+useEffect(() => {
+  playSound()
+// eslint-disable-next-line react-hooks/exhaustive-deps
+},[audioSrc])
 
   function playSound() {
     audioBreak.volume = 1;
@@ -120,6 +133,10 @@ function App() {
     <div 
     className = {!bgColor ? 'App session' : 'App break'}
     >
+      <NavBar
+      changeSound={changeSound}
+      ></NavBar>
+
       <h1 id='titleMain'>The Faboulous Purrmodoro Timer</h1>
       <div id='length-container'>
         <Length

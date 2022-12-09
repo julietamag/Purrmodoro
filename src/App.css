@@ -94,13 +94,14 @@
 }
 
 @media screen and (max-width: 600px){
-  #title{
-    text-align: center
+  #titleMain{
+    text-align: center;
+    padding: 0 4rem;
   }
 
   #length-container {
     min-height: 7rem;
-    justify-content: space-evenly;
+    justify-content: center;
   }
 
   .length-title{
@@ -109,9 +110,13 @@
   }
 
   .Length{
-    padding: 1rem;
-    width: 13rem;
+    width: 10rem;
     height: 7rem;
+    border-radius: 0%;
+  }
+
+  .Length:first-child{
+    border-right: 1px solid white;
   }
 
   .App{
