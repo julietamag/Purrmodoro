@@ -8,9 +8,9 @@ import { Length } from './Length';
 // import soundArray from './soundArray';
 
 function App() {
-  const [displayTime, setDisplayTime] = useState(25 * 60);
-  const [breakTime, setBreakTime] = useState(5 * 60);
-  const [sessionTime, setSessionTime] = useState(25 * 60);
+  const [displayTime, setDisplayTime] = useState(0.3 * 60);
+  const [breakTime, setBreakTime] = useState(0.3 * 60);
+  const [sessionTime, setSessionTime] = useState(0.3 * 60);
   const [timerOn, setTimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
   const [audioSrc, setAudioSrc] = useState(deafault_sound)
@@ -108,7 +108,6 @@ useEffect(() => {
   // DIMINISH DIPLAY TIMER BY ONE SEC UNTIL THE CONDITION REACHES 0
   function handlePlayPause() {
     if (!timerOn) {
-      setImageCat(cat_working);
       playSound();
       let interval = setInterval(() => {
         setDisplayTime((prev) => {
@@ -124,6 +123,11 @@ useEffect(() => {
       localStorage.setItem('interval-id', interval);
     }
 
+    if(onBreak){
+      setImageCat(cat_sleepy);
+    } else if(!onBreak){
+      setImageCat(cat_working);
+    }
     // PAUSE THE TIMER
     if (timerOn) {
       clearInterval(localStorage.getItem('interval-id'))
